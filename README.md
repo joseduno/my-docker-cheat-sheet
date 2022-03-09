@@ -13,6 +13,11 @@ sudo docker images
 ```
 Esto no muestra los contenedores activos
 
+Paraecutar terminal dentro de un contenedor al correr una imagen y poder interactuar con ella
+```
+sudo docker run -it <imagen>:<tag> sh
+```
+
 ## Contenedores
 Parastar contenedores corriendo:
 ```
