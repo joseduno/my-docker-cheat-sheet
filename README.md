@@ -100,20 +100,20 @@ _**Nota:** el docker-compose crea un network alias por cada servicio definido co
 ##### Estructura del archivo #####
 **version**: "3.7"
 **services**:
-&nbsp;&nbsp;&nbsp;&nbsp;**app**:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image: <imagen>:<tag>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ports:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <puertoHost>:<puertoContenedor>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;environment:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VARIABLE1: VALOR1
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VARIABLE2: VALOR2
-&nbsp;&nbsp;&nbsp;&nbsp;**mysql**: <imagen>:<tag>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumes:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <./ruta/al/directorio/host>:<./ruta/al/directorio/contenedor>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;environment:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VARIABLE1: VALOR1
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VARIABLE2: VALOR2
+**app**:
+image: <imagen>:<tag>
+ports:
+- <puertoHost>:<puertoContenedor>
+environment:
+VARIABLE1: VALOR1
+VARIABLE2: VALOR2
+**mysql**: <imagen>:<tag>
+image:
+volumes:
+- <./ruta/al/directorio/host>:<./ruta/al/directorio/contenedor>
+environment:
+VARIABLE1: VALOR1
+VARIABLE2: VALOR2
 
 Para ejecutar los contenedores definidos en el archivo docker-compose.yaml
 ```
