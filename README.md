@@ -103,14 +103,14 @@ _**Nota:** el docker-compose crea un network alias por cada servicio definido co
 **app**:
 image: <imagen>:<tag>
 ports:
-- <puertoHost>:<puertoContenedor>
+\- <puertoHost>:<puertoContenedor>
 environment:
 VARIABLE1: VALOR1
 VARIABLE2: VALOR2
 **mysql**: <imagen>:<tag>
 image:
 volumes:
-- <./ruta/al/directorio/host>:<./ruta/al/directorio/contenedor>
+\- <./ruta/al/directorio/host>:<./ruta/al/directorio/contenedor>
 environment:
 VARIABLE1: VALOR1
 VARIABLE2: VALOR2
