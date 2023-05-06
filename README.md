@@ -3,27 +3,27 @@
 Install (linux): https://docs.docker.com/engine/install/ubuntu/
 
 ## Imagenes
-Pararrer contenedor a partde una imagen y mantenerlo corriendo siempre (con el paráro -d):
+Para correr contenedor a partir de una imagen y mantenerlo corriendo siempre (con el parámetro -d):
 ```
 sudo docker run -d <imagen>:<tag>
 ```
-el comando anterior descarga la imagen en caso de no existir (docker pull), si existiese la corre. Parastar las imagenes descargadas:
+el comando anterior descarga la imagen en caso de no existir (docker pull), si existiese la corre. Para consulstar las imagenes descargadas:
 ```
 sudo docker images
 ```
 Esto no muestra los contenedores activos
 
-Paraecutar terminal dentro de un contenedor al correr una imagen y poder interactuar con ella
+Para ejecutar terminal dentro de un contenedor al correr una imagen y poder interactuar con ella
 ```
 sudo docker run -it <imagen>:<tag> sh
 ```
 
 ## Contenedores
-Parastar contenedores corriendo:
+Para consultar contenedores corriendo:
 ```
 sudo docker ps
 ```
-Paraiciar un contenedor previamente cerrado por su CONTAINER ID (se puede ver ejecutando docker ps -a)
+Para iniciar un contenedor previamente cerrado por su CONTAINER ID (se puede ver ejecutando docker ps -a)
 ```
 sudo docker start <CONTAINER ID>
 ```
@@ -31,29 +31,29 @@ También se puede detener un contenedor corriendo con:
 ```
 sudo docker stop <CONTAINER ID>
 ```
-Parar el log de un contenerdor concreto por CONTAINER ID O NAMES (se puede ver ejecutando docker ps -a)
+Parar ver el log de un contenerdor concreto por CONTAINER ID O NAMES (se puede ver ejecutando docker ps -a)
 ```
 sudo docker logs [<CONTAINER ID>, <NAME>]
 ```
-con el paráro -f se puede ver en tiempo real el contenido del log
+con el parámetro -f se puede ver en tiempo real el contenido del log
 ```
 sudo docker logs -f [<CONTAINER ID>, <NAME>]
 ```
-Paraecutar terminal dentro de un contenedor que está corriendo se utiliza
+Para ejecutar terminal dentro de un contenedor que está corriendo se utiliza
 ```
 sudo docker exec -it <CONTAINER ID> sh
 ```
 
 ## Dockerfile
 Archivo para crear imagenes
-- **FROM:** siempre es la primera linea e indica la imagen padre a partde la cual se creará la nueva imagen
+- **FROM:** siempre es la primera linea e indica la imagen padre a partir de la cual se creará la nueva imagen
 - **WORKDIR:** sobre esta dirección dentro de la imagen se ejecutaran los comandos a menos que se especifique lo contrario
 - **COPY:** copiar archivos desde el host hacia la imagen, la ruta "." a la izquierda apunta hacia el directorio del host donde se encuentra el Dockerfile, y la ruta "." a la derecha apunta hacia el WORKDIR de la imagen
 - **RUN:** ejecuta el comando en la carpeta definida por WORKDIR
 - **CMD:** comando que se ejecutara al final, tambien se puede usar **ENTRYPOINT** pararizar la ejecución de este comando al correr el contenedor basado en la imagen que crea el Dockerfile
 - 
 
-Paranstruir imagen a partdel Dockerfile:
+Para construir imagen a partdel Dockerfile:
 ```
 sudo docker build -t <imagen>:<tag> .
 ```
@@ -78,7 +78,7 @@ sudo docker push <usuario/imagen>:<tag>
 ```
 
 ## Sin docker-compose
-Si la imagen contiene alguna aplicación, será necesario exponer los puertos para uso desde el host, esto se hace de la siguiente forma:
+Si la imagen contiene alguna aplicación, será necesario exponer los puertos para su uso desde el host, esto se hace de la siguiente forma:
 ```
 sudo docker run -d -p <puertoHost>:<puertoContenedor> <imagen>:<tag>
 ```
